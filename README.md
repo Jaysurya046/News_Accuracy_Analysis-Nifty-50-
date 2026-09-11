@@ -51,7 +51,7 @@ Quant-Trading/
 │   ├── text/                       # Comprehensive text reports (*.txt)
 │   └── comparison_reports/         # Per-source daily breakdown CSVs
 │
-└── docs/                           # Project summaries and deployment guides
+└── summary/                        # Project summaries and deployment guides
     ├── PROJECT_SUMMARY.md
     ├── DEPLOYMENT_SUMMARY.txt
     └── PUSH_INSTRUCTIONS.md
