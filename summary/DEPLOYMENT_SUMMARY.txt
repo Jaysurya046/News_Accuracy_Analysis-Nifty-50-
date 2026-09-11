@@ -1,153 +1,153 @@
-✅ GIT REPOSITORY SETUP COMPLETE!
+✅ GIT REPOSITORY SETUP & DEPLOYMENT SUMMARY
 
 ═══════════════════════════════════════════════════════════════════════════
 
 📊 REPOSITORY DETAILS
 
-  Repository Path: c:\Users\tanma\OneDrive\Desktop\bloobmnt
-  Total Commits:   52 commits ✅ (50 semantic + 2 documentation)
-  Branch:          main
-  Remote:          https://github.com/tanmayhb127/bloobmnt.git
-  Username:        tanmayhb127
+  Repository Name: News_Accuracy_Analysis-Nifty-50-
+  Local Path:      c:\Users\jayas\OneDrive\Desktop\web_development\Quant-Trading
+  Total Commits:   15 semantic commits ✅
+  Current Branch:  main (up to date with origin/main)
+  Remote URL:      https://github.com/Jaysurya046/News_Accuracy_Analysis-Nifty-50-.git
+  GitHub User:     Jaysurya046
+  Email:           jaysurya046@gmail.com
 
 ═══════════════════════════════════════════════════════════════════════════
 
-📁 REPOSITORY CONTENTS
+📁 REPOSITORY ARCHITECTURE & CONTENTS
 
-  Python Scripts:          16 files
-  ├─ Data Generation:      2 scripts
-  ├─ Comparison Analysis:  3 scripts
-  ├─ Charting:            2 scripts
-  ├─ Supporting:          9 scripts
+  Python Modules & Scripts:
+  ├─ Master Pipeline Runner:  run_pipeline.py (CLI multi-stage orchestrator)
+  ├─ Configuration:          config.py & src/config.py (centralized paths)
+  ├─ Scrapers (src/scrapers/): 4 modules
+  │   ├─ scrape_mint.py
+  │   ├─ scrape_news_articles.py
+  │   ├─ scrape_premarket.py
+  │   └─ view_news_articles.py
+  ├─ Data Generators (src/data_generators/): 3 active + legacy generators
+  │   ├─ generate_1year_nifty50_all_sources.py
+  │   ├─ generate_3year_nifty50_all_sources.py
+  │   ├─ inspect_excel_and_convert.py
+  │   └─ legacy/ (historical step generators)
+  ├─ Analysis Engine (src/analysis/): 5 modules
+  │   ├─ compare_both_periods.py
+  │   ├─ compare_nifty_ranges.py
+  │   ├─ merge_and_select_best.py
+  │   ├─ prepare_dataset.py
+  │   └─ summarize_best_source.py
+  ├─ Machine Learning & Backtesting (src/models/): 2 modules
+  │   ├─ train_gbm.py (LightGBM/GBM baseline with K-fold CV)
+  │   └─ backtest_predictions.py (directional bias & hit rate metrics)
+  ├─ Visualization & Reporting (src/visualization/): 4 modules
+  │   ├─ plot_both_periods.py
+  │   ├─ plot_best_source_counts.py
+  │   ├─ visualize_backtest.py
+  │   └─ generate_backtest_report.py
+  └─ Utilities (src/utils/): 4 modules
+      ├─ verify_trading_days.py
+      ├─ verify_3year.py
+      ├─ check_packages.py
+      └─ check_weekends.py
 
-  Data Files (20 total):   20 CSV files
-  ├─ 1-Year Data:         10 files (250 trading days × 10 sources)
-  ├─ 3-Year Data:         10 files (750 trading days × 10 sources)
+  Data Storage (data/):
+  ├─ Raw Data (data/raw/): 2 datasets
+  │   ├─ NIFTY_50 historical market prices (ground truth High/Low/Open/Close)
+  │   └─ all_news_articles_2023_2025.csv
+  ├─ 1-Year Datasets (data/sources_1year/): 10 CSVs (250 trading days × 10 sources)
+  ├─ 3-Year Datasets (data/sources_3year/): 10 CSVs (750 trading days × 10 sources)
+  └─ Processed Datasets (data/processed/): 11 CSVs
+      ├─ Merged prediction tables (1-year & 3-year)
+      ├─ Daily best source selections & summaries
+      └─ Quantitative backtest detail & summary tables
 
-  Comparison Results:      8 files
-  ├─ 1-Year Analysis:      4 files
-  ├─ 3-Year Analysis:      4 files
+  Model Artifacts (models/):
+  ├─ models_lgb_folds.joblib (Trained LightGBM cross-validation fold models)
+  └─ training_metrics.json (Out-of-fold RMSE and classification metrics)
 
-  Visualizations:          3 PNG charts
-  ├─ 1-Year Comparison:    1 chart
-  ├─ 3-Year Comparison:    1 chart
-  └─ Original Analysis:    1 chart
+  Visualizations & Analytical Reports (reports/):
+  ├─ Figures (reports/figures/): 7 PNG charts & dashboards
+  │   ├─ 1year_backtest_dashboard.png
+  │   ├─ 3year_backtest_dashboard.png
+  │   ├─ 1year_best_source_counts.png
+  │   ├─ 3year_best_source_counts.png
+  │   ├─ 1year_cumulative_analysis.png
+  │   ├─ 3year_cumulative_analysis.png
+  │   └─ best_source_counts.png
+  ├─ Text Reports (reports/text/): 2 comprehensive executive summaries
+  │   ├─ 1year_backtest_report.txt
+  │   └─ 3year_backtest_report.txt
+  └─ Source Comparisons (reports/comparison_reports/): 20 CSV files
 
-  Documentation:           4 files
-  ├─ README.md
-  ├─ PROJECT_SUMMARY.md
-  ├─ PUSH_INSTRUCTIONS.md
-  └─ requirements.txt
-
-═══════════════════════════════════════════════════════════════════════════
-
-🎯 COMMIT BREAKDOWN (52 Total)
-
-  Phase 1: Scraper Development (Commits 1-13)
-  ├─ Project setup, configuration, base scraper class
-  ├─ Error handling, rate limiting, user agent rotation
-  └─ Documentation of scraper failures → synthetic data pivot
-
-  Phase 2: Data Generation (Commits 14-24)
-  ├─ 1-year Nifty 50 generator
-  ├─ 3-year Nifty 50 generator
-  ├─ Trading day validation (no weekends/holidays)
-  └─ 10 news sources expansion
-
-  Phase 3: Data Processing (Commits 25-30)
-  ├─ Historical NIFTY CSV import
-  ├─ Excel to CSV conversion
-  ├─ Range parsing engine
-  ├─ Regex extraction + fallback logic
-  └─ Distance metric implementation
-
-  Phase 4: Analysis Framework (Commits 31-38)
-  ├─ Comparison framework for all sources
-  ├─ Per-source accuracy reports
-  ├─ Best source selection logic
-  ├─ Source ranking by frequency
-  └─ Within-range percentage tracking
-
-  Phase 5: Visualization (Commits 39-44)
-  ├─ matplotlib charting framework
-  ├─ Best source counts bar charts
-  ├─ Within-range percentage overlays
-  ├─ 1-year + 3-year separate visualizations
-  └─ Chart styling and formatting
-
-  Phase 6: Integration & Documentation (Commits 45-52)
-  ├─ 1-year/3-year dataset separation
-  ├─ Unified comparison script for both periods
-  ├─ Unified charting script for both periods
-  ├─ Comprehensive project documentation
-  ├─ Results summary and findings
-  ├─ Project summary documentation
-  └─ Push instructions for GitHub
-
-═══════════════════════════════════════════════════════════════════════════
-
-🚀 READY TO PUSH TO GITHUB!
-
-Next Step: Create repository on GitHub, then run:
-
-  git push -u origin main
-
-✨ OR ✨
-
-Read detailed instructions: PUSH_INSTRUCTIONS.md
+  Documentation & Config:
+  ├─ README.md (Comprehensive overview, architecture, and CLI usage)
+  ├─ LICENSE (MIT License)
+  ├─ requirements.txt (Dependencies: pandas, lightgbm, scikit-learn, etc.)
+  ├─ summary/PROJECT_SUMMARY.md
+  ├─ summary/PUSH_INSTRUCTIONS.md
+  └─ summary/DEPLOYMENT_SUMMARY.txt
 
 ═══════════════════════════════════════════════════════════════════════════
 
-📊 KEY FINDINGS (From Analysis)
+🎯 COMMIT HISTORY BREAKDOWN (15 Semantic Commits)
 
-1-Year Results:
-  • Top Source: NDTV Profit (32 best matches, 6.25% accuracy)
-  • Total Days: 258
-  • Within Range: 10 days (3.88%)
-  • Average Distance: 3,622 points
-
-3-Year Results:
-  • Top Source: Economic Times Live (32 best matches, 6.25% accuracy)
-  • Total Days: 750+
-  • Average Distance: 3,268 points
-
-═══════════════════════════════════════════════════════════════════════════
-
-✅ VERIFICATION CHECKLIST
-
-  ✓ Local Git repo initialized
-  ✓ All 50 semantic commits created
-  ✓ Remote configured (GitHub origin)
-  ✓ Branch renamed to 'main'
-  ✓ Documentation added
-  ✓ All data files included
-  ✓ All scripts committed
-  ✓ All visualizations included
-  ✓ Ready for first push to GitHub
+  • 95fbeeb: Initialize project structure, environment configuration, and dependencies
+  • e4a5df1: Add Nifty 50 ground-truth market prices and historical news articles dataset
+  • c027970: Add 1-year and 3-year trade setup datasets across 10 financial news sources
+  • 3c1c9bf: Implement web scrapers and news article extraction modules
+  • cc43e41: Implement trade setup data generators and trading day validation utilities
+  • acfcf78: Add range parsing engine, dataset merger, and comparative analysis algorithms
+  • 1913f75: Add processed prediction mergers, daily best source selections, and range evaluations
+  • 94f267b: Implement LightGBM/GBM baseline training pipeline with cross-validation and metrics persistence
+  • fbf552b: Add quantitative prediction backtesting engine with directional bias and error metrics
+  • 33414f0: Add visualization dashboards, cumulative accuracy charts, and backtest reporting tools
+  • 9709ea7: Implement master pipeline CLI runner for multi-stage automated execution
+  • 2ad9fe8: Add comprehensive project documentation, architecture overview, and deployment guides
+  • c3bced6: Add comprehensive ProjectDetails.md technical architecture and interview guide
+  • d7a1c6e: Delete file
+  • 525cf72: Untrack ProjectDetails.md and add to .gitignore
 
 ═══════════════════════════════════════════════════════════════════════════
 
-📞 QUICK COMMANDS
+📊 QUANTITATIVE FINDINGS & METRICS SUMMARY
 
-View commit history:
-  git log --oneline
+  1. News Accuracy (Support / Resistance vs. Market High / Low):
+     • 1-Year Leader: NDTV Profit (32 days as lowest distance, 6.25% within-range accuracy)
+     • 3-Year Leader: Economic Times Live (32 days as lowest distance, 6.25% within-range accuracy)
+     • Average Distance Metric: ~3,200 to 3,600 points
 
-View specific commit:
-  git show <commit-hash>
+  2. Backtest Engine Performance:
+     • Overall Hit Rate across sources: ~3.28%
+     • Directional Bias: Predictions systematically miss on the lower bound (~96.7% Low Miss Rate),
+       indicating analyst ranges tend to be placed higher than actual market drops.
 
-Check repository status:
-  git status
-
-Push to GitHub:
-  git push -u origin main
-
-Create a new commit:
-  git add .
-  git commit -m "Your message"
-  git push
+  3. Machine Learning Baseline:
+     • Model: LightGBM Regressor / Classifier with 5-Fold Cross Validation
+     • Evaluation: Out-of-fold RMSE ~1,263 points
 
 ═══════════════════════════════════════════════════════════════════════════
 
-Created: November 29, 2025
-Repository: https://github.com/tanmayhb127/bloobmnt
-Status: READY FOR DEPLOYMENT ✅
+🚀 MASTER PIPELINE EXECUTION COMMANDS
+
+  Run Entire End-to-End Pipeline:
+    python run_pipeline.py --all
+
+  Run Specific Stages:
+    python run_pipeline.py --stage generate    # Data generation
+    python run_pipeline.py --stage compare     # Accuracy comparison
+    python run_pipeline.py --stage prepare     # Dataset preparation
+    python run_pipeline.py --stage train       # Baseline LightGBM training
+    python run_pipeline.py --stage backtest    # Backtesting engine
+    python run_pipeline.py --stage visualize   # Dashboards & charts
+    python run_pipeline.py --stage reports     # Comprehensive text reports
+
+═══════════════════════════════════════════════════════════════════════════
+
+✅ GIT DEPLOYMENT STATUS
+
+  ✓ Local repository initialized and linked to GitHub remote
+  ✓ Branch 'main' tracking 'origin/main'
+  ✓ Remote: https://github.com/Jaysurya046/News_Accuracy_Analysis-Nifty-50-.git
+  ✓ Clean working tree (all changes tracked)
+  ✓ Production-ready documentation and execution pipeline
+
+═══════════════════════════════════════════════════════════════════════════

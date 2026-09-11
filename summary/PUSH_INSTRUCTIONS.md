@@ -1,123 +1,136 @@
-# 🚀 PUSH TO GITHUB INSTRUCTIONS
+# 🚀 GitHub Push & Repository Management Guide
 
-Your local Git repository is now ready with **50 semantic commits** and all project files!
+This repository is fully configured, version-controlled with 15 semantic commits, and connected to its remote GitHub repository:
+**`https://github.com/Jaysurya046/News_Accuracy_Analysis-Nifty-50-.git`**
 
-## ✅ What's Been Set Up
+---
 
-- ✅ Local Git repository initialized
-- ✅ 50 meaningful commits created (documenting the entire development journey)
-- ✅ Remote configured: `https://github.com/tanmayhb127/bloobmnt.git`
-- ✅ Branch renamed to `main`
-- ✅ All project files staged and committed
+## 📋 Current Repository Status
 
-## 📋 Next Steps to Push to GitHub
+- **Remote URL**: `https://github.com/Jaysurya046/News_Accuracy_Analysis-Nifty-50-.git`
+- **Active Branch**: `main` (tracking `origin/main`)
+- **Git User**: `Jaysurya046` (`jaysurya046@gmail.com`)
+- **Local Path**: `c:\Users\jayas\OneDrive\Desktop\web_development\Quant-Trading`
 
-### Step 1: Create the Repository on GitHub
+---
 
-1. Go to https://github.com/new
-2. Create a new repository with these settings:
-   - **Repository name**: `bloobmnt`
-   - **Description**: "Nifty 50 Trade Setups Comparative Analysis - Comparing accuracy of 10 Indian financial news sources"
-   - **Visibility**: Public (or Private, your choice)
-   - **Initialize this repository with**: Leave unchecked (we have our own commits)
+## 🔄 Daily Git Workflow
 
-3. Click "Create repository"
-
-### Step 2: Push to GitHub
-
-Once the repository is created on GitHub, run this command in the terminal:
-
+### 1. Check Working Tree Status
+Before staging or committing, check for modified or untracked files:
 ```powershell
-git push -u origin main
+git status
 ```
 
-Or with authentication (if needed):
-
+### 2. Stage Changes
+Stage specific modified files or all changes:
 ```powershell
-git push -u origin main --force
-```
+# Stage specific files (recommended)
+git add summary/
+git add src/
 
-## 📊 Verify the Push
-
-After pushing, verify on GitHub:
-1. Visit https://github.com/tanmayhb127/bloobmnt
-2. You should see:
-   - ✅ 51 commits (50 + PROJECT_SUMMARY.md commit)
-   - ✅ All Python scripts
-   - ✅ All CSV data files
-   - ✅ All PNG visualizations
-   - ✅ All comparison reports
-
-## 🔑 Authentication
-
-If Git asks for authentication, use one of these methods:
-
-### Option 1: GitHub Token (Recommended)
-1. Generate a Personal Access Token: https://github.com/settings/tokens
-2. Use token as password when prompted
-3. Or configure it in Git:
-   ```powershell
-   git config --global user.password "your_github_token"
-   ```
-
-### Option 2: SSH Keys
-1. Set up SSH: https://github.com/settings/keys
-2. Change remote to SSH:
-   ```powershell
-   git remote set-url origin git@github.com:tanmayhb127/bloobmnt.git
-   git push -u origin main
-   ```
-
-## 📈 Repository Structure on GitHub
-
-Your repository will contain:
-
-```
-bloobmnt/
-├── README.md
-├── PROJECT_SUMMARY.md
-├── requirements.txt
-├── config.py
-├── .gitignore
-├── [10 Python generator scripts]
-├── [10 Python analysis scripts]
-├── [20 CSV datasets: 10×1-year + 10×3-year]
-├── [4 comparison report CSVs]
-├── [4 PNG visualization charts]
-├── [comparison_reports/ folder with 10 per-source reports]
-└── [All other supporting files]
-```
-
-## 📝 Commit Log Preview
-
-View all 51 commits locally:
-```powershell
-git log --oneline
-```
-
-Sample output:
-```
-8f55dbe Add comprehensive project summary documentation
-73cdd42 Final repo cleanup and polish
-c43ff84 Create results summary and findings
-6af4766 Add comprehensive project documentation
-d52edd8 Create unified charting script for both periods
-27d63cf Create unified comparison script for both periods
-... (44 more commits)
-```
-
-## ✨ Next Time
-
-After the first push, future updates are easier:
-```powershell
-cd c:\Users\tanma\OneDrive\Desktop\bloobmnt
+# Or stage all changes
 git add .
-git commit -m "Your commit message"
-git push
+```
+
+### 3. Create a Semantic Commit
+Write clear, descriptive commit messages describing the changes made:
+```powershell
+git commit -m "Update docs to reflect current modular repository architecture"
+```
+
+### 4. Push to GitHub
+Push your local commits directly to the remote `main` branch:
+```powershell
+git push origin main
 ```
 
 ---
 
-**Ready to push?** Run: `git push -u origin main`
+## 🔑 Authentication Guide
 
-Good luck! 🎉
+If Git prompts for credentials when pushing, use one of the following methods:
+
+### Option A: GitHub Personal Access Token (Recommended)
+1. Navigate to **GitHub** → **Settings** → **Developer Settings** → **Personal Access Tokens** → **Tokens (classic)** (or Fine-grained tokens).
+2. Generate a token with the `repo` scope enabled.
+3. When prompted in the terminal:
+   - **Username**: `Jaysurya046`
+   - **Password**: *Paste your Personal Access Token*
+4. Optionally cache your credentials with Git Credential Manager:
+   ```powershell
+   git config --global credential.helper manager
+   ```
+
+### Option B: SSH Authentication
+1. Generate an SSH key (if not already created):
+   ```powershell
+   ssh-keygen -t ed25519 -C "jaysurya046@gmail.com"
+   ```
+2. Add the public key (`~/.ssh/id_ed25519.pub`) to your GitHub account under **Settings** → **SSH and GPG keys**.
+3. Switch your Git remote to SSH:
+   ```powershell
+   git remote set-url origin git@github.com:Jaysurya046/News_Accuracy_Analysis-Nifty-50-.git
+   ```
+4. Push using SSH:
+   ```powershell
+   git push origin main
+   ```
+
+---
+
+## 🛠️ Useful Git Commands
+
+| Purpose | Command |
+|:--------|:--------|
+| View remote URLs | `git remote -v` |
+| View recent commit history | `git log --oneline -n 10` |
+| View detailed commit diff | `git show <commit-hash>` |
+| Pull latest remote changes | `git pull --rebase origin main` |
+| Discard uncommitted file changes | `git restore <filename>` |
+| View changes before staging | `git diff` |
+| View staged changes | `git diff --staged` |
+
+---
+
+## 📁 GitHub Repository Contents
+
+When viewing the repository on GitHub (`https://github.com/Jaysurya046/News_Accuracy_Analysis-Nifty-50-`), the structure consists of:
+
+```
+News_Accuracy_Analysis-Nifty-50-/
+├── .gitignore
+├── LICENSE
+├── README.md
+├── requirements.txt
+├── config.py
+├── run_pipeline.py
+├── data/
+│   ├── raw/
+│   ├── sources_1year/
+│   ├── sources_3year/
+│   └── processed/
+├── summary/
+│   ├── DEPLOYMENT_SUMMARY.txt
+│   ├── PROJECT_SUMMARY.md
+│   └── PUSH_INSTRUCTIONS.md
+├── models/
+│   ├── models_lgb_folds.joblib
+│   └── training_metrics.json
+├── reports/
+│   ├── figures/
+│   ├── text/
+│   └── comparison_reports/
+└── src/
+    ├── config.py
+    ├── scrapers/
+    ├── data_generators/
+    ├── analysis/
+    ├── models/
+    ├── visualization/
+    └── utils/
+```
+
+---
+
+**Repository is synchronized and ready!**
