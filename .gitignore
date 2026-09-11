@@ -6,3 +6,5 @@ __pycache__/
 *.xlsx
 .idea/
 .commit_*
+ProjectDetails.md
+ProjectDetails.MD
