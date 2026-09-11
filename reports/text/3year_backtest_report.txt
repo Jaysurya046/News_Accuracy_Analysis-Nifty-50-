@@ -1,0 +1,173 @@
+
+================================================================================
+NIFTY 50 PREDICTION BACKTEST REPORT (3YEAR)
+Generated: 2026-09-11 14:06:06
+================================================================================
+
+EXECUTIVE SUMMARY
+--------------------------------------------------------------------------------
+Total Sources Tested: 10
+Total Trading Days: 14
+Average Hit Rate (All Sources): 3.40%
+Most Accurate Source: mint_nifty50_3year.csv (4.56% hit rate)
+Least Accurate Source: timesnowbusiness_nifty50_3year.csv (2.90% hit rate)
+
+KEY METRICS EXPLAINED
+--------------------------------------------------------------------------------
+
+1. HIT RATE (%)
+   - Definition: Percentage of days where actual High <= Predicted High AND actual Low >= Predicted Low
+   - Interpretation: Higher is better (lucky to have hits at all with synthetic data)
+   - Current Average: 3.40%
+
+2. MISS RATES (%)
+   - High Miss: Actual High exceeded Predicted High
+   - Low Miss: Actual Low fell below Predicted Low
+   - Current High Miss Rate: 0.00%
+   - Current Low Miss Rate: 96.60%
+   - Insight: Nearly all predictions "miss low" (underestimate the low bound)
+
+3. ERROR METRICS (Points)
+   - Avg High Error: -2374.70 pts (negative = underestimate)
+   - Avg Low Error: 1592.45 pts (positive = overestimate)
+   - Avg Total Error: 3975.29 pts
+
+4. DIRECTIONAL BIAS
+   - Definition: (Avg High Error - Avg Low Error)
+   - Negative = Channel biased LOW (underestimates highs, overestimates lows)
+   - Positive = Channel biased HIGH (overestimates highs, underestimates lows)
+   - Current Bias: -3967.15 pts
+
+TOP 5 PERFORMERS (by Hit Rate)
+--------------------------------------------------------------------------------
+
+1. mint_nifty50_3year.csv
+   Hit Rate: 4.56% (11/241 days)
+   Avg Total Error: 3974.06 pts
+   Avg High Overshoot: 0.00 pts (when wrong on high)
+   Avg Low Overshoot: 1674.18 pts (when wrong on low)
+   Directional Bias: -3964.40 pts
+
+2. bloomberg_nifty50_3year.csv
+   Hit Rate: 3.73% (9/241 days)
+   Avg Total Error: 3971.38 pts
+   Avg High Overshoot: 0.00 pts (when wrong on high)
+   Avg Low Overshoot: 1654.10 pts (when wrong on low)
+   Directional Bias: -3964.35 pts
+
+3. etnow_nifty50_3year.csv
+   Hit Rate: 3.73% (9/241 days)
+   Avg Total Error: 3979.16 pts
+   Avg High Overshoot: 0.00 pts (when wrong on high)
+   Avg Low Overshoot: 1660.24 pts (when wrong on low)
+   Directional Bias: -3971.80 pts
+
+4. cnbc_nifty50_3year.csv
+   Hit Rate: 3.32% (8/241 days)
+   Avg Total Error: 3976.57 pts
+   Avg High Overshoot: 0.00 pts (when wrong on high)
+   Avg Low Overshoot: 1651.47 pts (when wrong on low)
+   Directional Bias: -3965.73 pts
+
+5. financialexpress_nifty50_3year.csv
+   Hit Rate: 3.32% (8/241 days)
+   Avg Total Error: 3974.40 pts
+   Avg High Overshoot: 0.00 pts (when wrong on high)
+   Avg Low Overshoot: 1645.80 pts (when wrong on low)
+   Directional Bias: -3966.77 pts
+
+BOTTOM 5 PERFORMERS (by Hit Rate)
+--------------------------------------------------------------------------------
+
+1. timesnowbusiness_nifty50_3year.csv
+   Hit Rate: 2.90% (7/241 days)
+   Avg Total Error: 3976.89 pts
+
+2. moneycontrol_nifty50_3year.csv
+   Hit Rate: 2.90% (7/241 days)
+   Avg Total Error: 3974.98 pts
+
+3. indiatodaybusiness_nifty50_3year.csv
+   Hit Rate: 2.90% (7/241 days)
+   Avg Total Error: 3978.63 pts
+
+4. ndtvprofit_nifty50_3year.csv
+   Hit Rate: 3.32% (8/241 days)
+   Avg Total Error: 3976.23 pts
+
+5. economictimeslive_nifty50_3year.csv
+   Hit Rate: 3.32% (8/241 days)
+   Avg Total Error: 3970.61 pts
+
+DETAILED ANALYSIS
+--------------------------------------------------------------------------------
+
+Range Coverage Pattern:
+  - All sources show ~96-97% "Low Miss" rate
+  - This indicates predictions are consistently TOO HIGH on the low bound
+  - Nifty typically trades LOWER than predicted support levels
+  - Insight: If using these ranges for risk management, use TIGHTER stops than predicted
+
+Accuracy Comparison:
+  Best Source (Hit Rate):      mint_nifty50_3year.csv: 4.56%
+  Average Hit Rate:             3.40%
+  Worst Source (Hit Rate):      timesnowbusiness_nifty50_3year.csv: 2.90%
+  
+  Best Source (Abs Error):      economictimeslive_nifty50_3year.csv: 3970.61 pts
+  Worst Source (Abs Error):     etnow_nifty50_3year.csv: 3979.16 pts
+
+Bias Analysis:
+  Most Pessimistic (Lowest Bias):  etnow_nifty50_3year.csv: -3971.80 pts
+  Most Optimistic (Highest Bias):  economictimeslive_nifty50_3year.csv: -3963.39 pts
+  
+  Interpretation: All sources show negative bias (biased LOW)
+
+KEY INSIGHTS & RECOMMENDATIONS
+--------------------------------------------------------------------------------
+
+1. SYNTHETIC DATA CAVEAT
+   - This backtest uses SYNTHETIC price predictions (not real news channel data)
+   - Real predictions may have different accuracy characteristics
+   - Consider collecting REAL predictions for more accurate backtesting
+
+2. PREDICTION QUALITY
+   - Hit rates ~3-5% suggest:
+     a) Predictions are very wide ranges (not precise)
+     b) Actual volatility often exceeds predicted ranges
+     c) OR both (realistic given market dynamics)
+
+3. RISK MANAGEMENT IMPLICATIONS
+   - Predicted ranges are TOO HIGH on the low side (96%+ Low Miss rate)
+   - Traders using these: Set stops TIGHTER than predicted support
+   - Expected slippage: ~1,590 pts below predicted support on average
+
+4. FOR TRADING STRATEGY
+   - Combine predictions with:
+     a) Support/Resistance from technical analysis
+     b) Options implied volatility (IV) for expected range
+     c) Historical volatility patterns
+   - Don't rely solely on news-channel predictions
+
+5. MODEL IMPROVEMENT OPPORTUNITIES
+   - Train a machine learning model to ADJUST predictions
+   - Use features: source, market open, implied vol, day-of-week, etc.
+   - Target: Minimize error or maximize hit rate
+   - Backtesting framework ready (see train_gbm.py)
+
+OUTPUT FILES GENERATED
+--------------------------------------------------------------------------------
+  - 3year_backtest_summary.csv: Per-source summary metrics
+  - 3year_backtest_detail.csv: Daily predictions + errors
+  - 3year_backtest_dashboard.png: Visual comparison charts
+  - 3year_cumulative_analysis.png: Time-series analysis
+  - This report
+
+NEXT STEPS
+--------------------------------------------------------------------------------
+1. Review visualizations for patterns (PNG files)
+2. Consider collecting REAL news channel predictions for production use
+3. Experiment with LightGBM model (train_gbm.py) to improve predictions
+4. Use LLM for natural language classification (run_llm_prompts.py)
+5. Deploy best model to production with retraining schedule
+
+================================================================================
