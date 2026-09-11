@@ -250,7 +250,7 @@ The repository features 15 clean, semantic commits tracking the entire developme
 
 ## 👤 Author & Repository
 
-- **Author**: Jaysurya046 ([jaysurya046@gmail.com](mailto:jaysurya046@gmail.com))
+- **Author**: Chennaboyana Jaya Surya (Jaysurya046) ([jaysurya046@gmail.com](mailto:jaysurya046@gmail.com))
 - **GitHub**: [Jaysurya046](https://github.com/Jaysurya046)
 - **Repository**: [News_Accuracy_Analysis-Nifty-50-](https://github.com/Jaysurya046/News_Accuracy_Analysis-Nifty-50-)
 - **License**: MIT License

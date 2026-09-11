@@ -9,6 +9,7 @@
   Total Commits:   15 semantic commits ✅
   Current Branch:  main (up to date with origin/main)
   Remote URL:      https://github.com/Jaysurya046/News_Accuracy_Analysis-Nifty-50-.git
+  Author:          Chennaboyana Jaya Surya (Jaysurya046)
   GitHub User:     Jaysurya046
   Email:           jaysurya046@gmail.com
 
