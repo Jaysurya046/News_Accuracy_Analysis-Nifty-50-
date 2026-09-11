@@ -1,0 +1,11 @@
+Source,N_Days,Hit_Count,Hit_Rate_%,High_Miss_%,Low_Miss_%,Avg_High_Error_pts,Avg_Low_Error_pts,Avg_Abs_High_Error_pts,Avg_Abs_Low_Error_pts,Avg_Total_Error_pts,Avg_High_Overshoot_pts,Avg_Low_Overshoot_pts,Directional_Bias
+timesnowbusiness_nifty50_1year.csv,241,12,4.98,0.0,95.02,-2375.07,1590.37,2375.07,1600.41,3975.47,0,1678.99,-3965.44
+ndtvprofit_nifty50_1year.csv,241,11,4.56,0.0,95.44,-2365.61,1581.99,2365.61,1591.08,3956.69,0,1662.41,-3947.6
+indiatodaybusiness_nifty50_1year.csv,241,8,3.32,0.0,96.68,-2370.09,1596.53,2370.09,1605.08,3975.16,0,1655.77,-3966.62
+financialexpress_nifty50_1year.csv,241,8,3.32,0.0,96.68,-2374.45,1593.33,2374.45,1602.33,3976.77,0,1652.69,-3967.78
+economictimeslive_nifty50_1year.csv,241,8,3.32,0.0,96.68,-2373.85,1594.15,2373.85,1602.48,3976.33,0,1653.19,-3968.0
+bloomberg_nifty50_1year.csv,241,7,2.9,0.0,97.1,-2371.1,1594.29,2371.1,1603.16,3974.27,0,1646.55,-3965.39
+cnbc_nifty50_1year.csv,241,7,2.9,0.0,97.1,-2377.21,1601.31,2377.21,1609.3,3986.5,0,1653.33,-3978.52
+etnow_nifty50_1year.csv,241,7,2.9,0.0,97.1,-2376.68,1596.68,2376.68,1603.52,3980.2,0,1647.96,-3973.35
+moneycontrol_nifty50_1year.csv,241,6,2.49,0.0,97.51,-2374.84,1586.74,2374.84,1595.44,3970.28,0,1631.71,-3961.57
+mint_nifty50_1year.csv,241,5,2.07,0.0,97.93,-2378.12,1592.59,2378.12,1598.81,3976.93,0,1629.51,-3970.71
